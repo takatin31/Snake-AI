@@ -1,5 +1,5 @@
 var len = 30;
-var Total = 500;
+var Total = 600;
 var players = [];
 var savedPlayers = [];
 var r = 20;
@@ -37,7 +37,7 @@ function newTarget() {
 }
 
 function draw() {
-    //frameRate(10);
+    //frameRate(5);
 
 
     for (let n = 0; n < slider.value(); n++) {
@@ -45,6 +45,7 @@ function draw() {
             if (players[j].stop || players[j].x * len < 0 || players[j].x * len >= width || players[j].y * len < 0 || players[j].y * len >= height) {
 
                 savedPlayers.push(players.splice(j, 1)[0]);
+
             }
         }
 
@@ -60,6 +61,7 @@ function draw() {
     background(51);
     init();
     for (player of players) {
+
         player.show();
         player.showTarget();
     }
